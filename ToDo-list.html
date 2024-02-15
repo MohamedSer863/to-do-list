@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="ToDo-list.css">
+    <link rel="stylesheet" href="tablestyle.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Sixtyfour&display=swap" rel="stylesheet">
+<style>
+  .title1 {
+    font-family: "Sixtyfour", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    word-spacing: 0px;
+
+    font-variation-settings:
+        "BLED" 0,
+        "SCAN" 0;
+}
+.title2 {
+  font-family: "Sixtyfour", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  word-spacing: 0px;
+
+  font-variation-settings:
+      "BLED" 0,
+      "SCAN" 0;
+}
+.indie-flower-regular {
+    font-family: "Indie Flower", cursive;
+    font-weight: 200;
+    font-style: normal;
+    word-spacing: 0px;
+  }
+  
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(photos/vecteezy_retro-80s-sci-fi-futuristic-style-background-vector-retro_21571750.svg);
+    background-size: cover; 
+    background-position: center;
+    background-position:30% 30%;
+
+}
+.section1{
+    /* background-color: #5b4d68;    */
+
+    height: 100vh;
+    width: 20%;
+    background: #62418d50;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0px;
+    left: 0px; z-index: 200;
+}
+.section2{
+
+    height: 100vh;
+    width: 81%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+}
+.box{
+    top: 150px;
+    position: absolute;
+    height: 390px;
+    width:900px;
+    background-image: url('photos/Group\ 9.svg');
+    background-size: cover; 
+    background-position: center;
+    z-index: 20;
+    /* position: absolute;
+    display: none; */
+}
+.container-box{
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    background: rgba(255,255,255,.08);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+
+    
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
+    /* filter: blur(1px); */
+    z-index: 2;
+}
+.it{
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    display: none;
+    /* background-color: aqua; */
+    z-index: 1;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* opacity: 0;
+    transition: opacity 1s ease; */
+}
+
+
+  .sub{
+    position: absolute;
+    top: 3px;
+    left: 650px;
+    --😀: #644dff;
+    --😀😀: #4836bb;
+    --😀😀😀: #654dff63;
+    cursor: pointer;
+    width: 184px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.125em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #fff;
+    background: var(--😀);
+    border: 2px solid var(--😀😀);
+    border-radius: .75rem;
+    box-shadow: 0 8px 0 var(--😀😀);
+    transform: skew(-10deg);
+    transition: all .1s ease;
+    filter: drop-shadow(0 15px 20px var(--😀😀😀));
+    /* z-index: 3; */
+}
+.sub:active {
+    letter-spacing: 0px;
+    transform: skew(-10deg) translateY(8px);
+    box-shadow: 0 0 0 var(--😀😀😀);
+  }
+.title1{
+    color: #ff65ff;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 2px;
+    left: 30px;
+}
+.title2{
+  color: #ff65ff;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 2px;
+  left: 3px;
+}
+hr{
+    border: none; 
+    border-top: 3px solid #000000; 
+    margin-top: 65px ; 
+    /* position: absolute; */
+    
+    
+}
+.button {
+    position: absolute;
+    left: 230PX;
+    top: 450px;
+    --😀: #644dff;
+    --😀😀: #4836bb;
+    --😀😀😀: #654dff63;
+    cursor: pointer;
+    width: 184px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.125em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #fff;
+    background: var(--😀);
+    border: 2px solid var(--😀😀);
+    border-radius: .75rem;
+    box-shadow: 0 8px 0 var(--😀😀);
+    transform: skew(-10deg);
+    transition: all .1s ease;
+    filter: drop-shadow(0 15px 20px var(--😀😀😀));
+    z-index: 30;
+  }
+  
+  .button:active {
+    letter-spacing: 0px;
+    transform: skew(-10deg) translateY(8px);
+    box-shadow: 0 0 0 var(--😀😀😀);
+  }
+  .button1 {
+    position: absolute;
+    left: 500PX;
+    top: 450px;
+    --😀: #644dff;
+    --😀😀: #4836bb;
+    --😀😀😀: #654dff63;
+    cursor: pointer;
+    width: 184px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.125em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #fff;
+    background: var(--😀);
+    border: 2px solid var(--😀😀);
+    border-radius: .75rem;
+    box-shadow: 0 8px 0 var(--😀😀);
+    transform: skew(-10deg);
+    transition: all .1s ease;
+    filter: drop-shadow(0 15px 20px var(--😀😀😀));
+    z-index: 30;
+  }
+  
+  .button1:active {
+    letter-spacing: 0px;
+    transform: skew(-10deg) translateY(8px);
+    box-shadow: 0 0 0 var(--😀😀😀);
+  }
+
+   .text1{
+    color: #20dbd9;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 225px;
+    left: 120PX;
+    z-index: 50;
+    cursor: pointer;
+}
+.text2{
+    color: #20dbd9;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 225px;
+    left: 530PX;
+    z-index: 50;
+    cursor: pointer;
+}
+.text3{
+    color: #20dbd9;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 320px;
+    left: 120PX;
+    z-index: 50;
+    cursor: pointer;
+}
+   .input {
+    position: absolute;
+    top: 240px;
+    left: 290PX;
+    z-index: 50;
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+  
+  .input:hover,
+  .input:focus {
+    
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+  }
+  .book {
+    position: absolute;
+    top: 240px;
+    left: 740px;
+    z-index: 50;
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+}
+label,
+textarea {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+textarea {
+  position: absolute;
+  top: 300px;
+  left: 290PX;
+  z-index: 33;
+  padding: 10px;
+  max-width: 100%;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+  
+ /* Style for the time input */
+ #timeInput[type="time"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+/* Style for the button */
+#addtime {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#addtime:hover {
+  background-color: #0056b3;
+}
+.timebox{
+  position: absolute;
+  z-index: 33;
+  top: 350px;
+  left: 730px;
+
+}
+.texttime{
+  position: absolute;
+  z-index: 33;
+  top: 335px;
+  left: 580px;
+  color: #20dbd9;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+/* Google fonts - Open Sans */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+/* colors */
+:root {
+  --blue: rgba(79, 192, 210, 1);
+  --green: rgba(82, 210, 154, 1);
+  --yellow: rgba(231, 196, 104, 0.7);
+  --orange: rgba(235, 118, 85, 1);
+  --dark-bg: rgba(0, 0, 0, 0.9);
+  --light-bg: rgba(255, 255, 255, 0.1);
+  --text: rgba(255, 255, 255, 0.9);
+}
+
+/* body */
+
+/* links */
+.nfl a,
+.mlb a,
+.nhl a,
+.pga a {
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+.nfl a { color: var(--blue); }
+.nfl a:hover { color: darken(var(--blue), 20%); }
+.mlb a { color: var(--green); }
+.mlb a:hover { color: darken(var(--green), 20%); }
+.nhl a { color: var(--yellow); }
+.nhl a:hover { color: darken(var(--yellow), 20%); }
+.pga a { color: var(--orange); }
+.pga a:hover { color: darken(var(--orange), 20%); }
+
+/* wrapper */
+.wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto 100px auto;
+  padding: 0;
+  background: #62418d50;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  overflow: hidden;
+  position: relative;
+}
+
+/* lists */
+.row ul {
+  margin: 0;
+  padding: 0;
+}
+.row ul li {
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+  list-style: none;
+  display: inline-block;
+  width: 20%;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+  .row ul li {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .row ul li {
+    font-size: 13px;
+  }
+}
+
+.title ul li {
+  padding: 15px 13px;
+}
+.row ul li {
+  padding: 5px 10px;
+}
+
+/* rows */
+.row {
+  padding: 20px 0;
+  height: 30px;
+  font-size: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+  border-top: 1px solid darken(var(--light-bg), 100%);
+}
+.row:hover {
+  background-color: lighten(var(--dark-bg), 10%);
+  height: 65px;
+}
+@media only screen and (max-width: 767px) {
+  .row:hover {
+    height: 85px;
+  }
+}
+@media only screen and (max-width: 359px) {
+  .row:hover {
+    height: 105px;
+  }
+}
+
+.title {
+  padding: 25px 0 5px 0;
+  height: 45px;
+  font-size: 0;
+  background-color: var(--light-bg);
+  border-left: 3px solid lighten(var(--light-bg), 100%);
+}
+.title:hover {
+  height: 45px;
+  background-color: var(--light-bg);
+  border-left: 3px solid lighten(var(--light-bg), 100%);
+}
+
+.title-hide {
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.nfl { border-left: 3px solid darken(var(--blue), 30%); }
+.nfl:hover { border-left: 3px solid var(--blue); }
+.mlb { border-left: 3px solid darken(var(--green), 30%); }
+.mlb:hover { border-left: 3px solid var(--green); }
+.nhl { border-left: 3px solid darken(var(--yellow), 30%); }
+.nhl:hover { border-left: 3px solid var(--yellow); }
+.pga { border-left: 3px solid darken(var(--orange), 30%); }
+.pga:hover { border-left: 3px solid var(--orange); }
+
+/* row one - fadeIn */
+.row-fadeIn-wrapper {
+  opacity: 0;
+  font-size: 0;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease-out;
+  animation: fadeIn 0.4s ease-out 2s 1 alternate;
+  animation-fill-mode: forwards;
+}
+.row-fadeIn-wrapper:hover {
+  height: 35px;
+}
+@media only screen and (max-width: 767px) {
+  .row-fadeIn-wrapper:hover {
+    height: 55px;
+  }
+}
+@media only screen and (max-width: 359px) {
+  .row-fadeIn-wrapper:hover {
+    height: 75px;
+  }
+}
+
+.fadeIn {
+  padding: 20px 0;
+  font-size: 0;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+.fadeIn:hover {
+  background-color: lighten(var(--dark-bg), 10%);
+}
+
+/* row two - fadeOut */
+.row-fadeOut-wrapper {
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease-out;
+  animation: fadeOut 0.4s ease-out 8s 1 alternate;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  height: 65px;
+}
+.row-fadeOut-wrapper:hover {
+  height: 100px;
+}
+
+/* update content */
+.update-row {
+  animation: update 0.5s ease-out 12s 1 alternate;
+}
+.update1 {
+  position: absolute;
+  top: 25px;
+  display: inline-block;
+  opacity: 1;
+  animation: update1 1s ease-out 12s 1 alternate;
+  animation-fill-mode: forwards;
+}
+.update2 {
+  position: absolute;
+  top: 25px;
+  display: inline-block;
+  opacity: 0;
+  animation: update2 4s ease-out 13s 1 alternate;
+  animation-fill-mode: forwards;
+}
+
+/* more content */
+ul.more-content li {
+  position: relative;
+  top: 22px;
+  font-size: 13px;
+  margin: 0;
+  padding: 10px 13px;
+  display: block;
+  height: 50px;
+  width: 100%;
+  color: darken(var(--text), 50%);
+}
+
+</style>
+</head>
+<body>
+    <section class="section1">
+        
+    </section>
+    <section class="section2">
+        <div class ="container">
+
+                <div class="nav">
+                <h1 class="title1">write your toDo-list hier</h1>
+                <button onclick="showBox()" id="sub" class="sub">Do an work</button>
+                <audio id="audioElement">
+                    <source src="photos/mixkit-extra-bonus-in-a-video-game-2045 (1).wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+            <hr>
+                <div class="it"id="it">
+                    <div id="container-box" class="container-box"></div>
+                    <button id="add" class="button">
+                        ADD
+                      </button>
+                      <button id="CancelButton" class="button1">
+                        CANCEL
+                      </button>
+                    <div id="box" class="box"></div>
+                    <h1 class="text1">wriht your task</h1>
+                    <input id="inputx" class="input" placeholder="text">
+                    <h1 class="text2">Degree of difficulty</h1>
+                    <select id="book" class="book" >
+                        <option value="easy">easy</option>
+                        <option value="midlle">midlle</option>
+                        <option value="hard">hard</option>
+
+                    </select>
+                    
+                    <h1 class="text3">discription</h1>
+                    <textarea id="story" name="story" rows="5" maxlength="150" cols="33">
+                    
+                    </textarea> 
+                    <h2 class="texttime">Enter a Time:</h2>
+                    <div class="timebox">     
+                      
+                      <input type="time" id="timeInput">
+                      <button id="addtime">Add</button>
+                  </div>    
+                </div>
+
+        </div>
+        <div class="taskpalce">
+            <section class="wrapper">
+                <!-- Row title -->
+                <main class="row title2">
+                  <ul>
+                    <li>Task</li>
+                    <li>Time</li>
+                    <li> difficulty</li>
+                    <li>Finish</li>
+                    <li>Delet</li>
+                  </ul>
+                </main>
+                <section id="row-fadeOut-wrapper" class="row-fadeOut-wrapper">
+                  <article class="row nfl">
+                    <ul id="fathertask">
+                      <li> raed a book</li>
+                      <li> 00:00</li>
+                      <li>easy</li>
+                      <li>finish</li>
+                      <li>delet</li>
+                    </ul>
+                    <ul class="more-content">
+                      <li>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima accusantium eos voluptatem aliquid sint possimus veritatis at impedit? Officiis. Lorem ipsum dolor sit amet.
+                      </li>
+                    </ul>
+              </section>
+              <section id="row-fadeOut-wrapper" class="row-fadeOut-wrapper">
+                <article class="row nfl">
+                  <ul id="fathertask">
+                    <li> raed a book</li>
+                    <li> 00:00</li>
+                    <li>easy</li>
+                    <li>finish</li>
+                    <li>delet</li>
+                  </ul>
+                  <ul class="more-content">
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima accusantium eos voluptatem aliquid sint possimus veritatis at impedit? Officiis. Lorem ipsum dolor sit amet.
+                    </li>
+                  </ul>
+            </section>
+            <section id="row-fadeOut-wrapper" class="row-fadeOut-wrapper">
+              <article class="row nfl">
+                <ul id="fathertask">
+                  <li> raed a book</li>
+                  <li> 00:00</li>
+                  <li>easy</li>
+                  <li>finish</li>
+                  <li>delet</li>
+                </ul>
+                <ul class="more-content">
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima accusantium eos voluptatem aliquid sint possimus veritatis at impedit? Officiis. Lorem ipsum dolor sit amet.
+                  </li>
+                </ul>
+          </section>
+          <section id="row-fadeOut-wrapper" class="row-fadeOut-wrapper">
+            <article class="row nfl">
+              <ul id="fathertask">
+                <li> raed a book</li>
+                <li> 00:00</li>
+                <li>easy</li>
+                <li>finish</li>
+                <li>delet</li>
+              </ul>
+              <ul class="more-content">
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima accusantium eos voluptatem aliquid sint possimus veritatis at impedit? Officiis. Lorem ipsum dolor sit amet.
+                </li>
+              </ul>
+        </section>
+        <section id="row-fadeOut-wrapper" class="row-fadeOut-wrapper">
+          <article class="row nfl">
+            <ul id="fathertask">
+              <li> raed a book</li>
+              <li> 00:00</li>
+              <li>easy</li>
+              <li>finish</li>
+              <li>delet</li>
+            </ul>
+            <ul class="more-content">
+              <li>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima accusantium eos voluptatem aliquid sint possimus veritatis at impedit? Officiis. Lorem ipsum dolor sit amet.
+              </li>
+            </ul>
+      </section>
+      <section id="row-fadeOut-wrapper" class="row-fadeOut-wrapper">
+        <article class="row nfl">
+          <ul id="fathertask">
+            <li> raed a book</li>
+            <li> 00:00</li>
+            <li>easy</li>
+            <li>finish</li>
+            <li>delet</li>
+          </ul>
+          <ul class="more-content">
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima accusantium eos voluptatem aliquid sint possimus veritatis at impedit? Officiis. Lorem ipsum dolor sit amet.
+            </li>
+          </ul>
+    </section>
+    <section id="row-fadeOut-wrapper" class="row-fadeOut-wrapper">
+      <article class="row nfl">
+        <ul id="fathertask">
+          <li> raed a book</li>
+          <li> 00:00</li>
+          <li>easy</li>
+          <li>finish</li>
+          <li>delet</li>
+        </ul>
+        <ul class="more-content">
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima accusantium eos voluptatem aliquid sint possimus veritatis at impedit? Officiis. Lorem ipsum dolor sit amet.
+          </li>
+        </ul>
+  </section>
+              
+              
+
+              
+        </div>
+    </section>
+</body>
+<script>
+document.getElementById("addtime").addEventListener("click", function() {
+    var timeValue = document.getElementById("timeInput").value;
+    console.log("Time entered:", timeValue);
+    // You can perform further actions with the time value here
+});
+document.getElementById("sub").addEventListener("click",function(){
+    var container = document.getElementById("it");
+    container.style.display = "flex";
+    //     // Trigger reflow to ensure the transition is applied
+    void container.offsetWidth;
+    container.style.opacity = "1"; // Change opacity to 1 to show the box
+})
+document.getElementById("CancelButton").addEventListener("click",function(){
+    var container = document.getElementById("it");
+    container.style.display = "none";
+})
+document.getElementById('sub').addEventListener('click', function() {
+  var audio = document.getElementById('audioElement');
+  audio.play();
+});
+document.getElementById('add').addEventListener('click', function() {
+  var audio = document.getElementById('audioElement');
+  audio.play();
+});
+
+document.getElementById('CancelButton').addEventListener('click', function() {
+  var audio = document.getElementById('audioElement');
+  audio.play();
+});
+
+
+// var tasks = [];
+
+// document.getElementById("add").addEventListener("click", function() {
+//     var taskname = document.getElementById("inputx").value;
+//     var tasktime = document.getElementById("timeInput").value;
+//     var taskdgree = document.getElementById("book").value;
+//     var taskdescription = document.getElementById("story").value;
+
+//     tasks.push({ taskname: taskname, tasktime: tasktime, taskdgree: taskdgree, taskdescription: taskdescription });
+
+//     var ulElement0 = document.createElement("section");
+//     var ulElement = document.createElement("ul");
+//     ulElement0.appendChild(ulElement); // Append ulElement to ulElement0
+
+//     var liElement1 = document.createElement("li");
+//     var textNode1 = document.createTextNode(taskname);
+//     liElement1.appendChild(textNode1);
+//     ulElement.appendChild(liElement1);
+
+//     var liElement2 = document.createElement("li");
+//     var textNode2 = document.createTextNode(tasktime);
+//     liElement2.appendChild(textNode2);
+//     ulElement.appendChild(liElement2);
+
+//     var liElement3 = document.createElement("li");
+//     var textNode3 = document.createTextNode(taskdgree);
+//     liElement3.appendChild(textNode3);
+//     ulElement.appendChild(liElement3);
+
+//     var liElement4 = document.createElement("li");
+//     var textNode4 = document.createTextNode(taskdescription);
+//     liElement4.appendChild(textNode4);
+//     ulElement.appendChild(liElement4);
+
+//     var parentElement = document.querySelector(".row-fadeOut-wrapper");
+//     parentElement.appendChild(ulElement0); // Append ulElement0 to the parent element
+// });
+
+
+document.getElementById("add").addEventListener("click",function(){
+  var taskname = document.getElementById("inputx").value;
+    var tasktime = document.getElementById("timeInput").value;
+    var taskdgree = document.getElementById("book").value;
+var tasks = [
+  {
+    "taskName" : taskname,
+    "tasktime" : tasktime,
+    "taskdgree" : taskdgree
+  }
+];
+var liElement = document.createElement( `
+    <section class="row-fadeOut-wrapper">
+                  <article class="row nfl">
+                    <ul id="fathertask">
+                      <li>${tasks}[0]</li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                    <ul class="more-content">
+                      <li>
+
+                      </li>
+                    </ul>
+      </section>
+`);
+document.getElementById("row-fadeOut-wrapper").appendChild(hElement)
+
+})
+
+</script>
+</html>
+
+
+
+
+
